@@ -1,1 +1,55 @@
-Hello World
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+		<meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+        <title>Valentin Kirilov</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <meta name="description" content="Valentin Kirilov's portfolio" />
+        <meta name="keywords" content="valentin, kirilov, valkirilov, jspres, portfolio" />
+        <meta name="author" content="valkirilov" />
+        <link rel="shortcut icon" href="favicon.ico"> 
+        <link rel="stylesheet" type="text/css" href="css/my-work.css" />
+        <link href="css/fonts-styles.css" rel="stylesheet">
+        <link href="css/under-construction-styles.css" rel="stylesheet">
+		<script type="text/javascript" src="js/modernizr.custom.79639.js"></script> 
+		<!--[if lte IE 8]><style>.main{display:none;} .support-note .note-ie{display:block;}</style><![endif]-->
+    </head>
+    <body onload="init()">
+        <div id="home">
+            <div class="avatar">
+                <img src="images/home-avatar.png" title="Valentin Kirilov" alt="" />
+                <div class="shader"></div>
+            </div>
+            <div class="name">
+                <div class="first">Valentin</div>
+                <div class="family">Kirilov</div>
+            </div>
+            <div class="developement">
+                UNDER DEV
+            </div>
+            
+            <div class="decoration-01"></div>
+            <div class="decoration-02"></div>
+            <div class="decoration-03"></div>
+            
+            <div class="description">
+                Welcome to my non created portfolio. There is nothing that 
+                you can see for now here so you can write me on val.kirilov[@]gmail.com
+            </div>
+        </div>
+        
+        <script type="text/javascript">
+            
+            function init() {
+                setTimeout(initAnimations, 300);
+            };
+            
+            function initAnimations() {
+                document.getElementById("home").className = "present";
+            };
+            
+        </script>
+    </body>
+</html>
