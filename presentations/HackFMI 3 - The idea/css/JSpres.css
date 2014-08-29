@@ -1,0 +1,535 @@
+body
+{
+	background: #FFFFFF url('../images/simple-backgrounds-09.jpg');
+	background-size: cover;
+	font-family: jura, electrolize, tahoma;
+	font-size: 21pt;
+	width: 100%;
+	height: 100%;
+}
+.impress-enabled
+{
+}
+.impress-enabled .step
+{
+	margin: 0;
+	opacity: 0.1;
+	-webkit-transition: opacity 1s;
+	-moz-transition: opacity 1s;
+	-ms-transition: opacity 1s;
+	-o-transition: opacity 1s;
+	transition: opacity 1s;
+}
+
+.impress-enabled .step.active
+{
+	opacity: 1;
+}
+
+.impress-support
+{
+	background: rgba(0, 0, 0, 0.9);
+	width: 780px;
+	margin: 100px auto;
+	padding: 20px;
+	box-shadow: 0px 0px 21px rgba(0, 0, 0, 0.9);
+	border-radius: 10px;
+	font-family: jura, electrolize, sans-serif;
+	color: #CCCCCC;
+	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.9);
+	line-height: 1em;
+	font-size: 1.5em;
+}
+.impress-supported
+{
+}
+.impress-supported .impress-support
+{
+	display: none;
+}
+
+#slide_1
+{
+	background: transparent;
+	background-size: 100% 100%;
+	position: relative;
+	width: 960px;
+	height: 720px;
+	top: 40%;
+	left: 50%;
+	font-family: jura, electrolize, tahoma;
+}
+#slide_1 .label_1
+{
+	width: 682px;
+	height: auto;
+	padding: 0px;
+	font-family: Serif;
+	position: absolute;
+	margin-top: 178px;
+	margin-left: 134px;
+	top: 0;
+	left: 0;
+}
+
+#slide_1 .label_2
+{
+	width: 821px;
+	height: auto;
+	padding: 0px;
+	font-family: Serif;
+	position: absolute;
+	margin-top: 266px;
+	margin-left: 84px;
+	top: 0;
+	left: 0;
+}
+
+#slide_1 .label_3
+{
+	width: 874px;
+	height: auto;
+	padding: 0px;
+	font-family: Serif;
+	position: absolute;
+	margin-top: 647px;
+	margin-left: 67px;
+	top: 0;
+	left: 0;
+}
+
+#slide_1 .image_4
+{
+	position: absolute;
+	width: undefined;
+	height: undefined;
+	top: 0;
+	left: 0;
+	margin-top: 502px;
+	margin-left: 158px;
+}
+
+.label_1 *
+{
+	padding: 0;
+	margin: 0;
+	position: relative;
+}
+
+.label_2 *
+{
+	padding: 0;
+	margin: 0;
+	position: relative;
+}
+
+.label_3 *
+{
+	padding: 0;
+	margin: 0;
+	position: relative;
+}
+
+#slide_2
+{
+	background: transparent;
+	background-size: 100% 100%;
+	position: relative;
+	width: 960px;
+	height: 720px;
+	top: 40%;
+	left: 50%;
+	font-family: jura, electrolize, tahoma;
+}
+#slide_2 .label_2
+{
+	width: 600px;
+	height: auto;
+	padding: 0px;
+	font-family: Serif;
+	position: absolute;
+	margin-top: 78px;
+	margin-left: 43px;
+	top: 0;
+	left: 0;
+}
+
+#slide_2 .label_3
+{
+	width: 854px;
+	height: auto;
+	padding: 0px;
+	font-family: Serif;
+	position: absolute;
+	margin-top: 191px;
+	margin-left: 34px;
+	top: 0;
+	left: 0;
+}
+
+#slide_2 .image_4
+{
+	position: absolute;
+	width: undefined;
+	height: undefined;
+	top: 0;
+	left: 0;
+	margin-top: 483px;
+	margin-left: 145px;
+}
+
+.label_2 *
+{
+	padding: 0;
+	margin: 0;
+	position: relative;
+}
+
+.label_3 *
+{
+	padding: 0;
+	margin: 0;
+	position: relative;
+}
+
+#slide_5
+{
+	background: transparent;
+	background-size: 100% 100%;
+	position: relative;
+	width: 960px;
+	height: 720px;
+	top: 40%;
+	left: 50%;
+	font-family: jura, electrolize, tahoma;
+}
+#slide_5 .label_7
+{
+	width: 600px;
+	height: auto;
+	padding: 0px;
+	font-family: Serif;
+	position: absolute;
+	margin-top: 265px;
+	margin-left: 202px;
+	top: 0;
+	left: 0;
+}
+
+.label_7 *
+{
+	padding: 0;
+	margin: 0;
+	position: relative;
+}
+
+#slide_6
+{
+	background: transparent;
+	background-size: 100% 100%;
+	position: relative;
+	width: 960px;
+	height: 720px;
+	top: 40%;
+	left: 50%;
+	font-family: jura, electrolize, tahoma;
+}
+#slide_6 .label_2
+{
+	width: 863px;
+	height: auto;
+	padding: 0px;
+	font-family: Serif;
+	position: absolute;
+	margin-top: 76px;
+	margin-left: 38px;
+	top: 0;
+	left: 0;
+}
+
+#slide_6 .label_3
+{
+	width: 855px;
+	height: auto;
+	padding: 0px;
+	font-family: Serif;
+	position: absolute;
+	margin-top: 192px;
+	margin-left: 47px;
+	top: 0;
+	left: 0;
+}
+
+.label_2 *
+{
+	padding: 0;
+	margin: 0;
+	position: relative;
+}
+
+.label_3 *
+{
+	padding: 0;
+	margin: 0;
+	position: relative;
+}
+
+#slide_7
+{
+	background: transparent;
+	background-size: 100% 100%;
+	position: relative;
+	width: 960px;
+	height: 720px;
+	top: 40%;
+	left: 50%;
+	font-family: jura, electrolize, tahoma;
+}
+#slide_7 .label_2
+{
+	width: 767px;
+	height: auto;
+	padding: 0px;
+	font-family: Serif;
+	position: absolute;
+	margin-top: 239px;
+	margin-left: 112px;
+	top: 0;
+	left: 0;
+}
+
+.label_2 *
+{
+	padding: 0;
+	margin: 0;
+	position: relative;
+}
+
+#slide_8
+{
+	background: transparent;
+	background-size: 100% 100%;
+	position: relative;
+	width: 960px;
+	height: 720px;
+	top: 40%;
+	left: 50%;
+	font-family: jura, electrolize, tahoma;
+}
+#slide_8 .label_2
+{
+	width: 860px;
+	height: auto;
+	padding: 0px;
+	font-family: Serif;
+	position: absolute;
+	margin-top: 74px;
+	margin-left: 50px;
+	top: 0;
+	left: 0;
+}
+
+#slide_8 .label_3
+{
+	width: 845px;
+	height: auto;
+	padding: 0px;
+	font-family: Serif;
+	position: absolute;
+	margin-top: 200px;
+	margin-left: 54px;
+	top: 0;
+	left: 0;
+}
+
+.label_2 *
+{
+	padding: 0;
+	margin: 0;
+	position: relative;
+}
+
+.label_3 *
+{
+	padding: 0;
+	margin: 0;
+	position: relative;
+}
+
+#slide_9
+{
+	background: transparent;
+	background-size: 100% 100%;
+	position: relative;
+	width: 960px;
+	height: 720px;
+	top: 40%;
+	left: 50%;
+	font-family: jura, electrolize, tahoma;
+}
+#slide_9 .label_6
+{
+	width: 600px;
+	height: auto;
+	padding: 0px;
+	font-family: Serif;
+	position: absolute;
+	margin-top: 234px;
+	margin-left: 200px;
+	top: 0;
+	left: 0;
+}
+
+.label_6 *
+{
+	padding: 0;
+	margin: 0;
+	position: relative;
+}
+
+#slide_10
+{
+	background: transparent;
+	background-size: 100% 100%;
+	position: relative;
+	width: 960px;
+	height: 720px;
+	top: 40%;
+	left: 50%;
+	font-family: jura, electrolize, tahoma;
+}
+#slide_10 .image_1
+{
+	position: absolute;
+	width: undefined;
+	height: undefined;
+	top: 0;
+	left: 0;
+	margin-top: 195px;
+	margin-left: 45px;
+}
+
+#slide_10 .image_2
+{
+	position: absolute;
+	width: undefined;
+	height: undefined;
+	top: 0;
+	left: 0;
+	margin-top: 194px;
+	margin-left: 366px;
+}
+
+#slide_10 .image_3
+{
+	position: absolute;
+	width: undefined;
+	height: undefined;
+	top: 0;
+	left: 0;
+	margin-top: 196px;
+	margin-left: 662px;
+}
+
+#slide_11
+{
+	background: transparent;
+	background-size: 100% 100%;
+	position: relative;
+	width: 960px;
+	height: 720px;
+	top: 40%;
+	left: 50%;
+	font-family: jura, electrolize, tahoma;
+}
+#slide_11 .label_1
+{
+	width: 812px;
+	height: auto;
+	padding: 0px;
+	font-family: Serif;
+	position: absolute;
+	margin-top: 168px;
+	margin-left: 90px;
+	top: 0;
+	left: 0;
+}
+
+.label_1 *
+{
+	padding: 0;
+	margin: 0;
+	position: relative;
+}
+
+#slide_12
+{
+	background: transparent;
+	background-size: 100% 100%;
+	position: relative;
+	width: 960px;
+	height: 720px;
+	top: 40%;
+	left: 50%;
+	font-family: jura, electrolize, tahoma;
+}
+#slide_12 .label_1
+{
+	width: 697px;
+	height: auto;
+	padding: 0px;
+	font-family: Serif;
+	position: absolute;
+	margin-top: 182px;
+	margin-left: 128px;
+	top: 0;
+	left: 0;
+}
+
+#slide_12 .label_2
+{
+	width: 389px;
+	height: auto;
+	padding: 0px;
+	font-family: Serif;
+	position: absolute;
+	margin-top: 570px;
+	margin-left: 36px;
+	top: 0;
+	left: 0;
+}
+
+#slide_12 .label_3
+{
+	width: 343px;
+	height: auto;
+	padding: 0px;
+	font-family: Serif;
+	position: absolute;
+	margin-top: 584px;
+	margin-left: 561px;
+	top: 0;
+	left: 0;
+}
+
+.label_1 *
+{
+	padding: 0;
+	margin: 0;
+	position: relative;
+}
+
+.label_2 *
+{
+	padding: 0;
+	margin: 0;
+	position: relative;
+}
+
+.label_3 *
+{
+	padding: 0;
+	margin: 0;
+	position: relative;
+}
+
