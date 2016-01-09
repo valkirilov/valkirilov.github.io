@@ -1,0 +1,56 @@
+.transition {
+  -webkit-transition: all 0.3s ease-in;
+  -moz-transition: all 0.3s ease-in;
+  -ms-transition: all 0.3s ease-in;
+  -o-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+}
+@media handheld, screen and (max-width: 480px) {
+  .top .content-block {
+    float: none;
+    margin: 40% auto;
+  }
+  .top .name {
+    font-size: 32px;
+  }
+  .top .description {
+    font-size: 18px;
+  }
+  .top .description img {
+    -webkit-transform: scale(0.6);
+    -moz-transform: scale(0.6);
+    -ms-transform: scale(0.6);
+    -o-transform: scale(0.6);
+    transform: scale(0.6);
+    margin: -2px 0px 0 0;
+  }
+  #main-line {
+    background: url("../images/line-strip-mobile.png");
+    height: 64px;
+    margin-top: -64px;
+  }
+  #main-line a img {
+    -webkit-transform: scale(0.6);
+    -moz-transform: scale(0.6);
+    -ms-transform: scale(0.6);
+    -o-transform: scale(0.6);
+    transform: scale(0.6);
+    margin: 0px -10px 0 -10px;
+  }
+}
+@media handheld, screen and (max-width: 320px) {
+  .top .name {
+    font-size: 29px;
+  }
+  .top .description {
+    font-size: 16px;
+  }
+  .top .description img {
+    -webkit-transform: scale(0.6);
+    -moz-transform: scale(0.6);
+    -ms-transform: scale(0.6);
+    -o-transform: scale(0.6);
+    transform: scale(0.6);
+    margin: -2px 0px 0 0;
+  }
+}

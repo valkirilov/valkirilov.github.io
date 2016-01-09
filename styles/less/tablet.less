@@ -1,0 +1,27 @@
+@import "mixins.less";
+
+@media handheld, screen and (max-width: 1024px) {
+
+}
+
+@media handheld, screen and (max-width: 768px) {
+	.top {
+
+		.name {
+			font-size: 54px;
+		}
+
+		.background {
+			background-size: cover;
+		}
+
+		.description {
+			font-size: 21px;
+
+			img {
+				.transform(scale(0.8));
+				margin: -2px 0px 0 0;
+			}
+		}
+	}
+}

@@ -1,0 +1,29 @@
+.transition {
+  -webkit-transition: all 0.3s ease-in;
+  -moz-transition: all 0.3s ease-in;
+  -ms-transition: all 0.3s ease-in;
+  -o-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+}
+@media handheld, screen and (max-width: 1024px) {
+  
+}
+@media handheld, screen and (max-width: 768px) {
+  .top .name {
+    font-size: 54px;
+  }
+  .top .background {
+    background-size: cover;
+  }
+  .top .description {
+    font-size: 21px;
+  }
+  .top .description img {
+    -webkit-transform: scale(0.8);
+    -moz-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    -o-transform: scale(0.8);
+    transform: scale(0.8);
+    margin: -2px 0px 0 0;
+  }
+}

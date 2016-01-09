@@ -1,0 +1,18 @@
+
+@transition-duration: 0.3s;
+
+.transition {
+	-webkit-transition: all @transition-duration ease-in;
+	-moz-transition: 		all @transition-duration ease-in;
+	-ms-transition: 		all @transition-duration ease-in;
+	-o-transition: 			all @transition-duration ease-in;
+			transition: 		all @transition-duration ease-in;
+}
+
+.transform(@property) {
+	-webkit-transform: 	@property;
+	-moz-transform: 		@property;
+	-ms-transform: 			@property;
+	-o-transform:				@property;
+	transform: 					@property;
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+		<meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+        <title>Valentin Kirilov</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
+        <meta name="description" content="Valentin Kirilov's portfolio" />
+        <meta name="keywords" content="valentin, kirilov, valkirilov, jspres, portfolio" />
+        <meta name="author" content="valkirilov" />
+        <link rel="shortcut icon" href="favicon.ico"> 
+
+        <link href="css/fonts-styles.css" rel="stylesheet">
+        <link href="css/under-construction-styles.css" rel="stylesheet">
+
+    </head>
+    <body onload="init()">
+        <div id="home">
+            <div class="avatar">
+                <img src="images/home-avatar.png" title="Valentin Kirilov" alt="" />
+                <div class="shader"></div>
+            </div>
+            <div class="name">
+                <div class="first">Valentin</div>
+                <div class="family">Kirilov</div>
+            </div>
+            <div class="developement">
+                UNDER DEV
+            </div>
+            
+            <div class="decoration-01"></div>
+            <div class="decoration-02"></div>
+            <div class="decoration-03"></div>
+            
+            <div class="description">
+                Welcome to my non created portfolio. You can learn more for me from the social networks below until my portfolio is ready.
+            </div>
+
+            <div class="social">
+                <a href="mailto:val.kirilov@gmail.com" target="_blank"><img src="images/icons/email-icon.png" /></a>
+                <a href="bg.linkedin.com/pub/valentin-kirilov/51/993/5b5/" target="_blank"><img src="images/icons/linkedin-icon.png" /></a>
+                <a href="https://www.behance.net/valkirilov" target="_blank"><img src="images/icons/behance-icon.png" /></a>
+            </div>
+        </div>
+        
+        <script type="text/javascript">
+            
+            function init() {
+                setTimeout(initAnimations, 300);
+            };
+            
+            function initAnimations() {
+                document.getElementById("home").className = "present";
+            };
+            
+        </script>
+    </body>
+</html>
+

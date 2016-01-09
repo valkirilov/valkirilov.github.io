@@ -1,0 +1,70 @@
+/*
+ * JSpres
+ * Copyright (C) 2013 Valentin Kirilov
+ * 
+ * This application is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ * 
+ */
+
+/* Font styles */
+@font-face {
+    font-family: electrolize;
+    src: url('../fonts/Electrolize/Electrolize-Regular.ttf');
+}
+@font-face {
+    font-family: jura;
+    src: url('../fonts/Jura/Jura-DemiBold.ttf');
+}
+
+
+
+/* 07.04.2013 */
+
+@font-face {
+    font-family: AlexBrush;
+    src: url('../fonts/AlexBrush/AlexBrush.ttf');
+}
+@font-face {
+    font-family: Arbutus;
+    src: url('../fonts/Arbutus/Arbutus');
+}
+
+@font-face {
+    font-family: Armata;
+    src: url('../fonts/Armata/Armata.ttf');
+}
+@font-face {
+    font-family: Englebert;
+    src: url('../fonts/Englebert/Englebert.ttf');
+}
+@font-face {
+    font-family: JuliusSansOne;
+    src: url('../fonts/JuliusSansOne/JuliusSansOne.ttf');
+}
+@font-face {
+    font-family: Roboto;
+    src: url('../fonts/Roboto/Roboto.ttf');
+}
+@font-face {
+    font-family: russoOne;
+    src: url('../fonts/RussoOne/RussoOne.ttf');
+}
+@font-face {
+    font-family: TextMeOne;
+    src: url('../fonts/TextMeOne/TextMeOne.ttf');
+}
+@font-face {
+    font-family: WendyOne;
+    src: url('../fonts/WendyOne/WendyOne.ttf');
+}
