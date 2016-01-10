@@ -1,16 +1,11 @@
-
-<h1 align="center">
-Valentin Kirilov
-</h1>
-
-<h3 align="center">
-Web Developer
-</h3>
+<p align="center">
+  <h1 align="center">Valentin Kirilov</h1>
+  <h3 align="center">Web Developer</h3>
+</p>
 
 <p align="center">
   <a href="http://valkirilov.github.io/" target="_blank">http://valkirilov.github.io</a>
 </p>
-___
 
 <p align="center">
   <a href="http://valkirilov.github.io/" target="_blank">
