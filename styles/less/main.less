@@ -9,8 +9,13 @@
 @foreground-line: #535353;
 
 @background-section-about: #ecf0f1;
+@foreground-section-about: #262525;
 @background-section-work: #e6ddbc;
+@foreground-section-work: #262525;
 @background-section-contacts: #2c3e50;
+@foreground-section-contacts: #e6ddbc;
+
+
 
 html, body {
 	width: 100%;
@@ -57,6 +62,7 @@ html, body {
 	.description {
 		font-size: 29px;
 		display: none;
+		padding-right: 2px;
 
 		img {
 			margin: -5px 10px 0 0; 
@@ -94,19 +100,16 @@ html, body {
   	margin: 0;
   	top: 0;
   }
-
+  
+  .center-menu {
+  	width: 252px;
+	height: auto;
+	background: red;
+	margin: 0 auto;
+  }
+  
   a {
-  	img {
-  		.transition;
-  		opacity: 0.6;
-  		margin: 16px 10px 0 10px;
-  	}
-
-  	&:hover {
-  		img {
-  			opacity: 1;
-  		}
-  	}
+  	position: relative;
   }
 }
 
@@ -118,22 +121,174 @@ html, body {
 
 	&.section-about {
 		background: @background-section-about;
+		color: @foreground-section-about;
+		min-height: 100%;
+		
+		.about-icons {
+			float: none;
+			margin: 50px auto;
+		}
+		
+		.col-3 {
+			width: 33%;
+			position: relative;
+			float: left;
+		}
+		.col-offset-1 {
+			margin-left: 16%; 
+		}
+		.col-offset-2 {
+			margin-left: 33%; 
+		}
 	}
 
 	&.section-work {
 		background: @background-section-work;
+		color: @foreground-section-work;
+		min-height: 100%;
 	}
 
 	&.section-contacts {
 		background: @background-section-contacts;
+		color: @foreground-section-contacts;
+		
+		.social {
+			width: 520px;
+    		margin: 0 auto 100px auto;
+		}
+	}
+	
+	.title {
+		margin: 100px auto 50px auto;
+		font-size: 48px;
+	}
+	
+	.content {
+		margin: 10px auto;
+		font-size: 27px;
 	}
 
 	.col {
 		margin: 0;
 		padding: 0;
+		
+		overflow: hidden;
+		
+		img {
+			width: 100%;
+			.transition;
+			cursor: pointer;
+		}
+		
+		&:hover {
+			img {
+				.transform(scale(1.1));
+			}
+		}
 	}
 
-	img {
-		width: 100%;
+}
+
+.work-project {
+	opacity: 0;
+}
+
+.social-icon {
+	width: 110px;
+	height: 110px;
+	background: url("../images/icons-social.png");
+	position: relative;
+	display: block;
+	float: left;
+	margin: 10px;
+	cursor: pointer;
+	display: none;
+	.transition;
+	
+	&:hover {
+		.transform(scale(1.1));
 	}
+	
+	&.åmail {
+	
+	}
+	&.linkedin {
+		background-position: -110px 0;
+	}
+	&.github {
+		background-position: -220px 0;
+	}
+	&.behance {
+		background-position: -330px 0;
+	}
+}
+
+.navigation-icon {
+	width: 64px;
+	height: 64px;
+	background: url("../images/icons-navigation.png");
+	position: relative;
+	display: block;
+  	.transition;
+  	opacity: 0.6;
+  	margin: 16px 10px 0 10px;
+	float: left;
+
+  	&:hover {
+		opacity: 1;
+  	}
+	
+	&.about {
+		background-position: 0 0;
+	}
+	&.work {
+		background-position: -64px 0;
+	}
+	&.contacts {
+		background-position: -128px 0;
+	}
+}
+
+.about-icon {
+	width: 128px;
+	height: 128px;
+	background: url("../images/icons-about.png");
+	position: relative;
+	display: block;
+  	.transition;
+	cursor: pointer;
+	margin: 0 auto;
+	opacity: 0;
+
+  	&:hover {
+		.transform(scale(1.1));
+  	}
+	
+	&.javascript {
+		background-position: 0 0;
+	}
+	&.apple {
+		background-position: -128px 0;
+	}
+	&.linux {
+		background-position: -256px 0;
+	}
+	&.php {
+		background-position: -384px 0;
+	}
+	&.html5 {
+		background-position: -512px 0;
+	}
+	&.css3 {
+		background-position: -640px 0;
+	}
+}
+
+.row {
+	margin-left: 0;
+	margin-right: 0;
+}
+
+.vertical-spacer {
+	height: 200px;
 }

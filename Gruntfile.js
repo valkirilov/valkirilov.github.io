@@ -42,9 +42,9 @@ module.exports = function(grunt) {
             './dist/libs.min.css': [
               './bower_components/html5-boilerplate/css/normalize.css',
               './bower_components/html5-boilerplate/css/main.css',
-              './bower_components/animate.css/animate.min.css',
-              './bootstrap/dist/css/bootstrap.min.css',
-              './bootstrap/dist/css/bootstrap-theme.min.css'
+              './bower_components/animate.css/animate.css',
+              './bower_components/bootstrap/dist/css/bootstrap.css',
+              './bower_components/bootstrap/dist/css/bootstrap-theme.css'
             ]
           }
         }

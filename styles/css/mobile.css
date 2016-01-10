@@ -37,6 +37,64 @@
     transform: scale(0.6);
     margin: 0px -10px 0 -10px;
   }
+  #main-line .center-menu {
+    width: 132px;
+  }
+  .navigation-icon {
+    -webkit-transform: scale(0.6);
+    -moz-transform: scale(0.6);
+    -ms-transform: scale(0.6);
+    -o-transform: scale(0.6);
+    transform: scale(0.6);
+    margin: 0px -10px 0 -10px;
+  }
+  .social-icon {
+    -webkit-transform: scale(0.4);
+    -moz-transform: scale(0.4);
+    -ms-transform: scale(0.4);
+    -o-transform: scale(0.4);
+    transform: scale(0.4);
+    margin: 0;
+  }
+  .social-icon:hover {
+    -webkit-transform: scale(0.5);
+    -moz-transform: scale(0.5);
+    -ms-transform: scale(0.5);
+    -o-transform: scale(0.5);
+    transform: scale(0.5);
+  }
+  .section .title {
+    margin: 50px auto 20px auto;
+    font-size: 27px;
+  }
+  .section .content {
+    margin: 10px auto;
+    font-size: 14px;
+  }
+  .section.section-contacts .social {
+    width: 340px;
+    margin: 20px auto 50px auto;
+  }
+  .section.section-contacts .social a {
+    width: 25%;
+    display: block;
+    position: relative;
+    float: left;
+  }
+  .section.section-about .col-3 {
+    height: 100px;
+  }
+  .vertical-spacer {
+    height: 50px;
+  }
+  .about-icon {
+    -webkit-transform: scale(0.8);
+    -moz-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    -o-transform: scale(0.8);
+    transform: scale(0.8);
+    margin: -20px 0 0 -20px;
+  }
 }
 @media handheld, screen and (max-width: 320px) {
   .top .name {
@@ -52,5 +110,27 @@
     -o-transform: scale(0.6);
     transform: scale(0.6);
     margin: -2px 0px 0 0;
+  }
+  .section.section-contacts .social {
+    width: 240px;
+    margin-top: 0;
+  }
+  .section.section-contacts .social a {
+    width: 50px;
+  }
+  .social-icon {
+    -webkit-transform: scale(0.4);
+    -moz-transform: scale(0.4);
+    -ms-transform: scale(0.4);
+    -o-transform: scale(0.4);
+    transform: scale(0.4);
+    margin: 0 0 0 -10px;
+  }
+  .social-icon:hover {
+    -webkit-transform: scale(0.45);
+    -moz-transform: scale(0.45);
+    -ms-transform: scale(0.45);
+    -o-transform: scale(0.45);
+    transform: scale(0.45);
   }
 }

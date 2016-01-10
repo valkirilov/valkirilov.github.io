@@ -52,6 +52,7 @@ body {
 .top .description {
   font-size: 29px;
   display: none;
+  padding-right: 2px;
 }
 .top .description img {
   margin: -5px 10px 0 0;
@@ -86,17 +87,14 @@ body {
   margin: 0;
   top: 0;
 }
-#main-line a img {
-  -webkit-transition: all 0.3s ease-in;
-  -moz-transition: all 0.3s ease-in;
-  -ms-transition: all 0.3s ease-in;
-  -o-transition: all 0.3s ease-in;
-  transition: all 0.3s ease-in;
-  opacity: 0.6;
-  margin: 16px 10px 0 10px;
+#main-line .center-menu {
+  width: 252px;
+  height: auto;
+  background: red;
+  margin: 0 auto;
 }
-#main-line a:hover img {
-  opacity: 1;
+#main-line a {
+  position: relative;
 }
 .section {
   position: relative;
@@ -106,17 +104,172 @@ body {
 }
 .section.section-about {
   background: #ecf0f1;
+  color: #262525;
+  min-height: 100%;
+}
+.section.section-about .about-icons {
+  float: none;
+  margin: 50px auto;
+}
+.section.section-about .col-3 {
+  width: 33%;
+  position: relative;
+  float: left;
+}
+.section.section-about .col-offset-1 {
+  margin-left: 16%;
+}
+.section.section-about .col-offset-2 {
+  margin-left: 33%;
 }
 .section.section-work {
   background: #e6ddbc;
+  color: #262525;
+  min-height: 100%;
 }
 .section.section-contacts {
   background: #2c3e50;
+  color: #e6ddbc;
+}
+.section.section-contacts .social {
+  width: 520px;
+  margin: 0 auto 100px auto;
+}
+.section .title {
+  margin: 100px auto 50px auto;
+  font-size: 48px;
+}
+.section .content {
+  margin: 10px auto;
+  font-size: 27px;
 }
 .section .col {
   margin: 0;
   padding: 0;
+  overflow: hidden;
 }
-.section img {
+.section .col img {
   width: 100%;
+  -webkit-transition: all 0.3s ease-in;
+  -moz-transition: all 0.3s ease-in;
+  -ms-transition: all 0.3s ease-in;
+  -o-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+  cursor: pointer;
+}
+.section .col:hover img {
+  -webkit-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  -o-transform: scale(1.1);
+  transform: scale(1.1);
+}
+.work-project {
+  opacity: 0;
+}
+.social-icon {
+  width: 110px;
+  height: 110px;
+  background: url("../images/icons-social.png");
+  position: relative;
+  display: block;
+  float: left;
+  margin: 10px;
+  cursor: pointer;
+  display: none;
+  -webkit-transition: all 0.3s ease-in;
+  -moz-transition: all 0.3s ease-in;
+  -ms-transition: all 0.3s ease-in;
+  -o-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+}
+.social-icon:hover {
+  -webkit-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  -o-transform: scale(1.1);
+  transform: scale(1.1);
+}
+.social-icon.linkedin {
+  background-position: -110px 0;
+}
+.social-icon.github {
+  background-position: -220px 0;
+}
+.social-icon.behance {
+  background-position: -330px 0;
+}
+.navigation-icon {
+  width: 64px;
+  height: 64px;
+  background: url("../images/icons-navigation.png");
+  position: relative;
+  display: block;
+  -webkit-transition: all 0.3s ease-in;
+  -moz-transition: all 0.3s ease-in;
+  -ms-transition: all 0.3s ease-in;
+  -o-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+  opacity: 0.6;
+  margin: 16px 10px 0 10px;
+  float: left;
+}
+.navigation-icon:hover {
+  opacity: 1;
+}
+.navigation-icon.about {
+  background-position: 0 0;
+}
+.navigation-icon.work {
+  background-position: -64px 0;
+}
+.navigation-icon.contacts {
+  background-position: -128px 0;
+}
+.about-icon {
+  width: 128px;
+  height: 128px;
+  background: url("../images/icons-about.png");
+  position: relative;
+  display: block;
+  -webkit-transition: all 0.3s ease-in;
+  -moz-transition: all 0.3s ease-in;
+  -ms-transition: all 0.3s ease-in;
+  -o-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+  cursor: pointer;
+  margin: 0 auto;
+  opacity: 0;
+}
+.about-icon:hover {
+  -webkit-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  -o-transform: scale(1.1);
+  transform: scale(1.1);
+}
+.about-icon.javascript {
+  background-position: 0 0;
+}
+.about-icon.apple {
+  background-position: -128px 0;
+}
+.about-icon.linux {
+  background-position: -256px 0;
+}
+.about-icon.php {
+  background-position: -384px 0;
+}
+.about-icon.html5 {
+  background-position: -512px 0;
+}
+.about-icon.css3 {
+  background-position: -640px 0;
+}
+.row {
+  margin-left: 0;
+  margin-right: 0;
+}
+.vertical-spacer {
+  height: 200px;
 }

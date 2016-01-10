@@ -3,13 +3,16 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+
+    <meta name="description" content="Valentin Kirilov's portfolio" />
+    <meta name="keywords" content="valentin, kirilov, valkirilov, jspres, portfolio, web developer, what to do, easy math, bulls and cows" />
+    <meta name="author" content="Valentin Kirillov" />
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>Valentin Kirilov | Web Developer</title>
 
-    <link href="dist/libs.min.css?rel=1452375687080" rel="stylesheet">
-    <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="dist/app.min.css?rel=1452375687095" rel="stylesheet">
+    <link href="dist/libs.min.css?rel=1452444347038" rel="stylesheet">
+    <link href="dist/app.min.css?rel=1452444347038" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -25,7 +28,7 @@
         <div class="col-xs-10 col-sm-8 col-md-6 content-block">
           <div class="name">Valentin Kirilov</div>
           <div class="description">
-            <img src="images/circle-arrow-down.png">
+            <a href="#section-about"><img src="images/circle-arrow-down.png"></a>
             Web Developer
           </div>
         </div>
@@ -33,44 +36,98 @@
     </div>
 
     <div id="main-line" class="line">
-      <a id="navigation-about" href=""><img src="images/circle-about.png"></a>
-      <a id="navigation-work" href=""><img src="images/circle-work.png"></a>
-      <a id="navigation-contacts" href=""><img src="images/circle-location.png"></a>
+	  <div class="center-menu">
+        <a id="navigation-about" href="#section-about"><span class="navigation-icon about"></span></a>
+        <a id="navigation-work" href="#section-work"><span class="navigation-icon work"></span></a>
+        <a id="navigation-contacts" href="#section-contacts"><span class="navigation-icon contacts"></span></a>
+	  </div>
     </div>
 
-    <div class="section section-about"></div>
-    <div class="section section-work">
+    <div id="section-about" class="section section-about">
+	  <div class="row">
+	  	<div class="title">About me</div>
+	  </div>
+	  <div class="container">
+		<p class="content">
+		</p>
+
+		<div class="about-icons col-sm-9 col-lg-6">		
+			<div class="col-3 col-offset-2"><span class="about-icon javascript"></span></div>
+			<div class="clearfix"></div>
+			<div class="col-3 col-offset-1"><span class="about-icon apple"></span></div>
+			<div class="col-3"><span class="about-icon linux"></span></div>
+			<div class="clearfix"></div>
+			<div class="col-3"><span class="about-icon php"></span></div>
+			<div class="col-3"><span class="about-icon html5"></span></div>
+			<div class="col-3"><span class="about-icon css3"></span></div>
+			<div class="clearfix"></div>
+		</div>
+		
+		<div class="clearfix"></div>
+	  </div>
+	</div>
+	
+    <div id="section-work" class="section section-work">
+	  <div class="row">
+	  	<div class="title">My Projects</div>
+	  </div>
       <div class="col col-sm-6 col-md-4">
-        <img src="images/portfolio-jspres.png">
+        <a href="http://jspres.com" target="_blank"><img id="work-project-jspres" class="work-project" src="images/portfolio-jspres.png"></a>
       </div>
       <div class="col col-sm-6 col-md-4">
-        <img src="images/portfolio-what-to-do.png">
+        <a href="http://valkirilov.github.io/what-to-do/#/" target="_blank"><img id="work-project-what-to-do" class="work-project" src="images/portfolio-what-to-do.png"></a>
       </div>
       <div class="col col-sm-6 col-md-4">
-        <img src="images/portfolio-easy-math.png">
+        <a href="http://valkirilov.github.io/easy-math/" target="_blank"><img id="work-project-easy-math" class="work-project" src="images/portfolio-easy-math.png"></a>
       </div>
       <div class="col col-sm-6 col-md-4">
-        <img src="images/portfolio-bulls-and-cows.png">
+        <img id="work-project-bulls-and-cows" class="work-project" src="images/portfolio-bulls-and-cows.png">
       </div>
       <div class="col col-sm-6 col-md-4">
-        <img src="images/portfolio-chat-privately.png">
+        <a href="https://github.com/valkirilov/ChatPrivately" target="_blank"><img id="work-project-chat-privately" class="work-project" src="images/portfolio-chat-privately.png"></a>
       </div>
       <div class="col col-sm-6 col-md-4">
-        <img src="images/portfolio-more-projects.png">
+        <img id="work-project-more-projects" class="work-project" src="images/portfolio-more-projects.png">
       </div>
     </div>
-    <div class="section section-contacts"></div>
+	
+	<div class="clearfix"></div>
+	
+    <div id="section-contacts" class="section section-contacts">
+	  <div class="row">
+	  	<div class="title">Whant to see more?</div>
+	    <p class="content">Find me in the network</p>
+	  </div>
+	  <div class="social">
+	  	<a href="mailto:val.kirilov@gmail.com?subject=Hello Valentin" target="_blank"><span id="social-email" class="social-icon еmail"></span></a>
+		<a href="https://www.linkedin.com/in/valentin-kirilov-5b599351" target="_blank"><span id="social-linkedin" class="social-icon linkedin"></span></a>
+		<a href="https://github.com/valkirilov" target="_blank"><span id="social-github" class="social-icon github"></span></a>
+		<a href="https://www.behance.net/valkirilov" target="_blank"><span id="social-behance" class="social-icon behance"></span></a>
+		<div class="clearfix"></div>
+	  </div>
+	  <div class="clearfix"></div>
+	</div>
 
     <div class="clearfix"></div>
 
     <footer class="line">
       <p>
         valkirilov.github.io<br />
-        Lorem ipsum dolor sit amet
       </p>
     </footer>
 
-    <script src="dist/libs.min.js?rel=1452375687096"></script>
-    <script src="dist/app.min.js?rel=1452375687096"></script>
+    <script src="dist/libs.min.js?rel=1452444347038"></script>
+    <script src="dist/app.min.js?rel=1452444347039"></script>
+	
+	<script>
+  		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+ 	 	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+ 	 	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+ 	 	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ 	 	ga('create', 'UA-34075082-1', 'auto');
+ 	 	ga('send', 'pageview');
+
+	</script>
   </body>
 </html>
