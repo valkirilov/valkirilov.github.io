@@ -65,7 +65,7 @@ html, body {
 		padding-right: 2px;
 
 		img {
-			margin: -5px 10px 0 0; 
+			margin: -5px 10px 0 0;
 			opacity: 0.5;
 			cursor: pointer;
 			.transition;
@@ -100,14 +100,14 @@ html, body {
   	margin: 0;
   	top: 0;
   }
-  
+
   .center-menu {
   	width: 252px;
 	height: auto;
 	background: red;
 	margin: 0 auto;
   }
-  
+
   a {
   	position: relative;
   }
@@ -123,22 +123,28 @@ html, body {
 		background: @background-section-about;
 		color: @foreground-section-about;
 		min-height: 100%;
-		
+
 		.about-icons {
 			float: none;
 			margin: 50px auto;
 		}
-		
+
+		p.description {
+			font-size: 21px;
+			margin: 0 auto;
+			float: none;
+		}
+
 		.col-3 {
 			width: 33%;
 			position: relative;
 			float: left;
 		}
 		.col-offset-1 {
-			margin-left: 16%; 
+			margin-left: 16%;
 		}
 		.col-offset-2 {
-			margin-left: 33%; 
+			margin-left: 33%;
 		}
 	}
 
@@ -151,18 +157,18 @@ html, body {
 	&.section-contacts {
 		background: @background-section-contacts;
 		color: @foreground-section-contacts;
-		
+
 		.social {
 			width: 520px;
     		margin: 0 auto 100px auto;
 		}
 	}
-	
+
 	.title {
 		margin: 100px auto 50px auto;
 		font-size: 48px;
 	}
-	
+
 	.content {
 		margin: 10px auto;
 		font-size: 27px;
@@ -171,15 +177,15 @@ html, body {
 	.col {
 		margin: 0;
 		padding: 0;
-		
+
 		overflow: hidden;
-		
+
 		img {
 			width: 100%;
 			.transition;
 			cursor: pointer;
 		}
-		
+
 		&:hover {
 			img {
 				.transform(scale(1.1));
@@ -204,13 +210,13 @@ html, body {
 	cursor: pointer;
 	display: none;
 	.transition;
-	
+
 	&:hover {
 		.transform(scale(1.1));
 	}
-	
+
 	&.åmail {
-	
+
 	}
 	&.linkedin {
 		background-position: -110px 0;
@@ -237,7 +243,7 @@ html, body {
   	&:hover {
 		opacity: 1;
   	}
-	
+
 	&.about {
 		background-position: 0 0;
 	}
@@ -263,7 +269,7 @@ html, body {
   	&:hover {
 		.transform(scale(1.1));
   	}
-	
+
 	&.javascript {
 		background-position: 0 0;
 	}
@@ -291,4 +297,93 @@ html, body {
 
 .vertical-spacer {
 	height: 200px;
+}
+
+.white-popup {
+  position: relative;
+  background: #FFF;
+  padding: 20px;
+  width: auto;
+  max-width: 640px;
+  margin: 20px auto;
+
+  img {
+  	opacity: 1;
+  	margin: 20px auto;
+  }
+}
+
+/* overlay at start */
+.mfp-fade.mfp-bg {
+  opacity: 0;
+
+  -webkit-transition: all 0.15s ease-out;
+  -moz-transition: all 0.15s ease-out;
+  transition: all 0.15s ease-out;
+}
+/* overlay animate in */
+.mfp-fade.mfp-bg.mfp-ready {
+  opacity: 0.8;
+}
+/* overlay animate out */
+.mfp-fade.mfp-bg.mfp-removing {
+  opacity: 0;
+}
+
+/* content at start */
+.mfp-fade.mfp-wrap .mfp-content {
+  opacity: 0;
+
+  -webkit-transition: all 0.15s ease-out;
+  -moz-transition: all 0.15s ease-out;
+  transition: all 0.15s ease-out;
+}
+/* content animate it */
+.mfp-fade.mfp-wrap.mfp-ready .mfp-content {
+  opacity: 1;
+}
+/* content animate out */
+.mfp-fade.mfp-wrap.mfp-removing .mfp-content {
+  opacity: 0;
+}
+
+@keyframes hinge {
+	0% { transform: rotate(0); transform-origin: top left; animation-timing-function: ease-in-out; }
+	20%, 60% { transform: rotate(80deg); transform-origin: top left; animation-timing-function: ease-in-out; }
+	40% { transform: rotate(60deg); transform-origin: top left; animation-timing-function: ease-in-out; }
+	80% { transform: rotate(60deg) translateY(0); opacity: 1; transform-origin: top left; animation-timing-function: ease-in-out; }
+	100% { transform: translateY(700px); opacity: 0; }
+}
+
+.hinge {
+  animation-duration: 1s;
+	animation-name: hinge;
+}
+.mfp-with-fade {
+  .mfp-content,
+  &.mfp-bg {
+    opacity: 0;
+    transition: opacity .5s ease-out;
+  }
+  &.mfp-ready {
+    .mfp-content {
+     opacity: 1;
+    }
+    &.mfp-bg {
+      opacity: 0.8;
+    }
+  }
+
+  &.mfp-removing {
+    &.mfp-bg {
+      opacity: 0;
+    }
+  }
+}
+
+
+
+
+.btn {
+	.border-radius(0);
 }

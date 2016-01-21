@@ -22,7 +22,7 @@ module.exports = function(grunt) {
           }
         }
       },
-   
+
       cssmin: {
         options: {
           shorthandCompacting: false,
@@ -44,7 +44,8 @@ module.exports = function(grunt) {
               './bower_components/html5-boilerplate/css/main.css',
               './bower_components/animate.css/animate.css',
               './bower_components/bootstrap/dist/css/bootstrap.css',
-              './bower_components/bootstrap/dist/css/bootstrap-theme.css'
+              './bower_components/bootstrap/dist/css/bootstrap-theme.css',
+              './bower_components/magnific-popup/dist/magnific-popup.css'
             ]
           }
         }
@@ -66,8 +67,9 @@ module.exports = function(grunt) {
         libs: {
           files: {
             './dist/libs.min.js': [
-              './bower_components/jquery/dist/jquery.min.js', 
-              './bower_components/bootstrap/dist/js/bootstrap.min.js'
+              './bower_components/jquery/dist/jquery.min.js',
+              './bower_components/bootstrap/dist/js/bootstrap.min.js',
+              './bower_components/magnific-popup/dist/jquery.magnific-popup.js',
             ]
           }
         }
@@ -116,7 +118,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-contrib-concat');
-  
+
   grunt.loadNpmTasks('grunt-cache-breaker');
 
   grunt.loadNpmTasks('grunt-contrib-cssmin');
@@ -125,7 +127,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-notify');
 
   grunt.task.run('notify_hooks');
-  
+
   grunt.registerTask('default', ['less', 'cssmin:app', 'uglify:app', 'cachebreaker', 'connect', 'watch']);
   grunt.registerTask('build', ['less', 'cssmin:libs', 'cssmin:app', 'uglify:libs', 'uglify:app', 'cachebreaker', 'connect', 'watch']);
 

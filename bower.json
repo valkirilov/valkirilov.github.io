@@ -9,6 +9,7 @@
     "html5-boilerplate": "~4.3.0",
     "bootstrap": "~3.3.5",
     "font-awesome": "~4.4.0",
-    "animate.css": "~3.5.1"
+    "animate.css": "~3.5.1",
+    "magnific-popup": "~1.0.1"
   }
 }
