@@ -1,6 +1,7 @@
 @import "mixins.less";
 
 @background-strip-image: url("../images/line-strip-mobile.png");
+@background-strip-image: #2c3e50;
 
 @media handheld, screen and (max-width: 480px) {
 	
@@ -27,24 +28,41 @@
 
 	#main-line {
 		background: @background-strip-image;
-		height: 64px;
-		margin-top: -64px;
+		height: 48px;
+		margin-top: -48px;
 
 		a {
+			display: inline-block;
 			img {
-				.transform(scale(0.6));
-				margin: 0px -10px 0 -10px;
+				margin: 0px 2px 0 2px;
 			}
 		}
 		
 		.center-menu {
-    		width: 132px;
+    		width: 154px;
 		}
 	}
 	
 	.navigation-icon {
-		.transform(scale(0.6));
-		margin: 0px -10px 0 -10px;
+		background: url("../images/icons-navigation-32.png");
+		margin: 8px 2px 0 2px;
+		width: 32px;
+		height: 32px;
+		position: relative;
+		display: block;
+		
+		&.about {
+			background-position: 0 0;
+		}
+		&.work {
+			background-position: -32px 0;
+		}
+		&.contacts {
+			background-position: -64px 0;
+		}
+		&.blog {
+			background-position: -96px 0;
+		}
 	}
 	
 	.social-icon {
