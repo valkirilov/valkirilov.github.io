@@ -13,6 +13,7 @@ var App = (function() {
 		initSectionContacts();
 		initAnchorScroll();
 		initMagnificPopup();
+		initTooltips();
 	};
 
 	var initTopContainer = function() {
@@ -134,24 +135,12 @@ var App = (function() {
 		  gallery: {
     		enabled: true
   		},
-  		zoom: {
-    		enabled: true, // By default it's false, so don't forget to enable it
-    		duration: 600, // duration of the effect, in milliseconds
-    		easing: 'ease-in-out', // CSS transition easing function
-
-    		opener: function(openerElement) {
-      		return openerElement.is('img') ? openerElement : openerElement.find('img');
-    		}
- 			},
-		  midClick: true, 				// Allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source in href.
-  		removalDelay: 600, 			// Delay in milliseconds before popup is removed
-  		mainClass: '.mfp-hide',   // Class that is added to popup wrapper and background make it unique to apply your CSS animations just to this exact popup
+  		removalDelay: 500,
+		  midClick: true,
+		  mainClass: 'mfp-fade',
   		callbacks: {
-		    beforeClose: function() {
-	        this.content.addClass('hinge');
-		    },
-		    close: function() {
-	        this.content.removeClass('hinge');
+		    open: function() {
+		      $('html').attr('style', '');
 		    }
 		  },
 		});
@@ -194,6 +183,10 @@ var App = (function() {
 	    insideViewport: rect1.x1 < rect2.x2 && rect1.x2 > rect2.x1 && rect1.y1 < rect2.y2 && rect1.y2 > rect2.y1
 	  };
 	}
+
+	var initTooltips = function() {
+		$('[data-toggle="tooltip"]').tooltip();
+	};
 
 	return {
 		init: init
