@@ -1,337 +1,888 @@
-@font-face {
-  font-family: 'TitilliumWeb-Regular';
-  src: url('./fonts/Titillium_Web/TitilliumWeb-Regular.ttf');
-}
-html,
-body {
-  width: 100%;
-  height: 100%;
-  font-family: "TitilliumWeb-Regular";
-  text-align: center;
-  margin: 0;
-  padding: 0;
-}
-.top {
-  width: 100%;
-  height: 100%;
-  position: relative;
-  background: #2c4252;
-  color: #ffffff;
-  text-align: right;
-}
-.top.added-image .background {
-  opacity: 1;
-}
-.top .background {
-  background: url("../images/background-photo-fade.png") no-repeat;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  opacity: 0;
-  -webkit-transition: all 0.3s ease-in;
-  -moz-transition: all 0.3s ease-in;
-  -ms-transition: all 0.3s ease-in;
-  -o-transition: all 0.3s ease-in;
-  transition: all 0.3s ease-in;
-}
-.top .content-block {
-  float: none;
-  margin: 30% auto;
-}
-.top .name {
-  font-size: 64px;
-  display: none;
-}
-.top .description {
-  font-size: 29px;
-  display: none;
-  padding-right: 2px;
-}
-.top .description img {
-  margin: -5px 10px 0 0;
-  opacity: 0.5;
-  cursor: pointer;
-  -webkit-transition: all 0.3s ease-in;
-  -moz-transition: all 0.3s ease-in;
-  -ms-transition: all 0.3s ease-in;
-  -o-transition: all 0.3s ease-in;
-  transition: all 0.3s ease-in;
-}
-.top .description img:hover {
-  opacity: 1;
-}
-.line {
-  width: 100%;
-  height: 64px;
-  background: #2c3e50 repeat-x;
-  color: #535353;
-}
-.line p {
-  padding: 20px 0;
-}
-#main-line {
-  display: none;
-  position: relative;
-  margin-top: -64px;
-  z-index: 1000;
-}
-#main-line.fixed {
-  position: fixed;
-  margin: 0;
-  top: 0;
-}
-#main-line .center-menu {
-  width: 252px;
-  height: auto;
-  margin: 0 auto;
-}
-#main-line a {
-  display: inline-block;
-  position: relative;
-}
-.section {
-  position: relative;
-  margin: 0;
-  padding: 0;
-  z-index: 100;
-}
-.section.section-about {
-  background: #ecf0f1;
-  color: #262525;
-  min-height: 100%;
-}
-.section.section-about .about-icons {
-  float: none;
-  margin: 50px auto;
-}
-.section.section-about p.description {
-  font-size: 21px;
-  margin: 0 auto;
-  float: none;
-}
-.section.section-about .col-3 {
-  width: 33%;
-  position: relative;
-  float: left;
-}
-.section.section-about .col-offset-1 {
-  margin-left: 16%;
-}
-.section.section-about .col-offset-2 {
-  margin-left: 33%;
-}
-.section.section-work {
-  background: #e6ddbc;
-  color: #262525;
-  /* min-height: 100%; */
+/* ============================================================
+   Theme palettes
+   ============================================================ */
 
+/* One value per token via light-dark(). `color-scheme: light dark` makes it follow the
+   system; the toggle forces the scheme on :root (below) to override. */
+:root {
+  color-scheme: light dark;
+
+  --bg: light-dark(#F7EDD8, #17120C);
+  --glow: light-dark(rgba(232, 133, 58, .22), rgba(224, 140, 70, .1));
+  --dot: light-dark(rgba(194, 90, 30, .28), rgba(230, 160, 100, .09));
+  --text: light-dark(#2B2118, #F1E9DC);
+  --text-soft: light-dark(#4A4033, #CBBDA9);
+  --text-muted: light-dark(#7A6E5C, #A2957F);
+  --text-label: light-dark(#8A7B66, #9A8C77);
+  --accent: light-dark(#C25A1E, #E0812F);
+  --accent-hover: light-dark(#9E4514, #F0A05A);
+  --surface: light-dark(#FFFCF5, #241D15);
+  --surface-hover: light-dark(#FDECD8, #33291D);
+  --card-hover: light-dark(#FFF7EA, #2C2418);
+  --modal: light-dark(#FBF4E6, #201A12);
+  --overlay: light-dark(rgba(43, 33, 24, .5), rgba(0, 0, 0, .6));
+  --avatar-ring-border: light-dark(#FCF5E4, #2B2318);
+  --avatar-ring-shadow: light-dark(rgba(194, 90, 30, .35), rgba(224, 129, 47, .45));
+  --border: light-dark(rgba(194, 90, 30, .24), rgba(224, 140, 70, .22));
+  --border-soft: light-dark(rgba(194, 90, 30, .2), rgba(224, 140, 70, .16));
+  --border-strong: light-dark(rgba(194, 90, 30, .28), rgba(224, 140, 70, .32));
+  --card-shadow-color: light-dark(rgba(194, 90, 30, .1), rgba(0, 0, 0, .45));
+  --modal-shadow-color: light-dark(rgba(43, 33, 24, .28), rgba(0, 0, 0, .6));
 }
-.section.section-contacts {
-  background: #2c3e50;
-  color: #e6ddbc;
+
+:root[data-theme="light"] {
+  color-scheme: light;
 }
-.section.section-contacts .social {
-  width: 520px;
-  margin: 0 auto 100px auto;
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
 }
-.section .title {
-  margin: 100px auto 50px auto;
-  font-size: 48px;
-}
-.section .content {
-  margin: 10px auto;
-  font-size: 27px;
-}
-.section .col {
+
+/* ============================================================
+   Base
+   ============================================================ */
+
+* {
   margin: 0;
   padding: 0;
-  overflow: hidden;
+  box-sizing: border-box;
 }
-.section .col img {
+
+/* Reserve the scrollbar gutter so revealing the sections never shifts the page sideways. */
+html {
+  scrollbar-gutter: stable;
+}
+
+body {
+  font-family: 'Space Grotesk', sans-serif;
+  color: var(--text);
+  background-color: var(--bg);
+  background-image:
+    radial-gradient(circle at 50% -5%, var(--glow), transparent 55%),
+    radial-gradient(var(--dot) 1.2px, transparent 1.2px);
+  background-size: auto, 22px 22px;
+  background-repeat: no-repeat, repeat;
+  background-attachment: fixed;
+  transition: background-color .3s, color .3s;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--accent-hover);
+}
+
+.page {
   width: 100%;
-  -webkit-transition: all 0.3s ease-in;
-  -moz-transition: all 0.3s ease-in;
-  -ms-transition: all 0.3s ease-in;
-  -o-transition: all 0.3s ease-in;
-  transition: all 0.3s ease-in;
+  max-width: 620px;
+  margin: 0 auto;
+  padding: 72px 24px 96px;
+}
+
+/* ============================================================
+   Theme toggle (fixed top-right)
+   ============================================================ */
+
+.theme-toggle {
+  position: fixed;
+  top: 18px;
+  right: 18px;
+  z-index: 40;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--border-strong);
+  background: var(--surface);
+  color: var(--text-muted);
   cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background .2s, border-color .2s, color .2s;
 }
-.section .col:hover img {
-  -webkit-transform: scale(1.1);
-  -moz-transform: scale(1.1);
-  -ms-transform: scale(1.1);
-  -o-transform: scale(1.1);
-  transform: scale(1.1);
+
+.theme-toggle:hover {
+  border-color: var(--accent);
+  color: var(--accent);
 }
-.work-project {
-  opacity: 0;
+
+/* Icons are SVG files under images/icons, tinted via mask so they follow currentColor. */
+.theme-toggle .icon-sun,
+.theme-toggle .icon-moon {
+  width: 18px;
+  height: 18px;
+  background-color: currentColor;
+  -webkit-mask: center / contain no-repeat;
+  mask: center / contain no-repeat;
 }
-.social-icon {
-  width: 110px;
-  height: 110px;
-  background: url("../images/icons-social.png");
-  position: relative;
-  display: block;
-  float: left;
-  margin: 10px;
-  cursor: pointer;
+
+.theme-toggle .icon-sun {
+  -webkit-mask-image: url(../../images/icons/sun.svg);
+  mask-image: url(../../images/icons/sun.svg);
+}
+
+.theme-toggle .icon-moon {
+  -webkit-mask-image: url(../../images/icons/moon.svg);
+  mask-image: url(../../images/icons/moon.svg);
+}
+
+/* Show the icon of the theme you'd switch TO (moon in light, sun in dark). */
+.theme-toggle .icon-sun {
   display: none;
-  -webkit-transition: all 0.3s ease-in;
-  -moz-transition: all 0.3s ease-in;
-  -ms-transition: all 0.3s ease-in;
-  -o-transition: all 0.3s ease-in;
-  transition: all 0.3s ease-in;
 }
-.social-icon:hover {
-  -webkit-transform: scale(1.1);
-  -moz-transform: scale(1.1);
-  -ms-transform: scale(1.1);
-  -o-transform: scale(1.1);
-  transform: scale(1.1);
+
+.theme-toggle .icon-moon {
+  display: block;
 }
-.social-icon.linkedin {
-  background-position: -110px 0;
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .theme-toggle .icon-sun {
+    display: block;
+  }
+
+  :root:not([data-theme="light"]) .theme-toggle .icon-moon {
+    display: none;
+  }
 }
-.social-icon.github {
-  background-position: -220px 0;
+
+:root[data-theme="dark"] .theme-toggle .icon-sun {
+  display: block;
 }
-.social-icon.behance {
-  background-position: -330px 0;
+
+:root[data-theme="dark"] .theme-toggle .icon-moon {
+  display: none;
 }
-.navigation-icon {
+
+:root[data-theme="light"] .theme-toggle .icon-sun {
+  display: none;
+}
+
+:root[data-theme="light"] .theme-toggle .icon-moon {
+  display: block;
+}
+
+/* ============================================================
+   Hero
+   ============================================================ */
+
+.stage {
+  will-change: transform;
+}
+
+.hero {
+  display: flex;
+  align-items: center;
+  gap: 26px;
+}
+
+.avatar {
+  width: 112px;
+  height: 112px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--avatar-ring-border);
+  box-shadow: 0 0 0 1px var(--avatar-ring-shadow);
+  display: block;
+  animation: zoomin .55s cubic-bezier(.34, 1.56, .64, 1) .6s both;
+}
+
+/* Hero text fades in one line at a time, after an initial beat */
+.hero h1 .hey {
+  animation: rise .35s cubic-bezier(.16, 1, .3, 1) .72s both;
+}
+
+.hero h1 .intro {
+  display: block;
+  animation: rise .35s cubic-bezier(.16, 1, .3, 1) .9s both;
+}
+
+.hero h1 {
+  font-family: 'Instrument Serif', serif;
+  font-size: 38px;
+  line-height: 1.02;
+  font-weight: 400;
+  letter-spacing: -.01em;
+  margin-bottom: 12px;
+}
+
+.hero h1 .hey {
+  display: block;
+  font-size: 19px;
+  color: var(--text-label);
+  line-height: 1;
+  margin-bottom: 5px;
+}
+
+.hero h1 em {
+  font-style: italic;
+  color: var(--accent);
+}
+
+.tagline {
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--text-soft);
+  white-space: nowrap;
+  min-height: 27px;
+}
+
+.tagline em {
+  font-family: 'Instrument Serif', serif;
+  font-style: italic;
+  font-size: 17px;
+  color: var(--accent);
+}
+
+.caret {
+  display: none;
+  width: 1.5px;
+  height: 1em;
+  margin-left: 1px;
+  background: var(--accent);
+  vertical-align: -0.15em;
+  animation: blink 1s step-end infinite;
+}
+
+.tagline.typing .caret {
+  display: inline-block;
+}
+
+.tagline.done .caret {
+  display: none;
+}
+
+/* No-JS: hide the empty typed tagline; the <noscript> fallback shows the text instead */
+html:not(.js) .tagline:not(.tagline-fallback) {
+  display: none;
+}
+
+/* ============================================================
+   Section labels
+   ============================================================ */
+
+.label {
+  font-weight: 500;
+  font-size: 12px;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--text-label);
+}
+
+/* ============================================================
+   Projects
+   ============================================================ */
+
+.projects {
+  margin-top: 64px;
+}
+
+.js .projects {
+  display: none;
+}
+
+.projects.show {
+  display: block;
+  animation: rise .45s cubic-bezier(.16, 1, .3, 1) both;
+}
+
+.section-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+
+.more-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font: 500 12px/1 'Space Grotesk', sans-serif;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--accent);
+  transition: color .2s;
+}
+
+.more-toggle:hover {
+  color: var(--accent-hover);
+}
+
+/* ============================================================
+   Cards
+   ============================================================ */
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.cards.more {
+  margin-top: 16px;
+}
+
+.cards.more[hidden] {
+  display: none;
+}
+
+.card {
+  position: relative;
+  overflow: hidden;
+  text-align: left;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-family: 'Space Grotesk', sans-serif;
+  color: var(--text);
+  transition: border-color .2s, transform .2s, background .2s, box-shadow .2s;
+}
+
+button.card,
+a.card {
+  cursor: pointer;
+}
+
+.card.featured {
+  gap: 18px;
+}
+
+.card h3 {
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--text);
+}
+
+.card p {
+  font-size: 14px;
+  line-height: 1.45;
+  color: var(--text-muted);
+}
+
+.card:hover {
+  border-color: var(--accent);
+  transform: translateY(-4px);
+  background: var(--card-hover);
+  box-shadow: 0 16px 34px var(--card-shadow-color);
+}
+
+.card-icon {
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-icon img {
+  width: 52px;
+  height: 52px;
+  object-fit: contain;
+  display: block;
+}
+
+.card.insight .card-icon img {
+  border-radius: 13px;
+}
+
+.card.thumb .card-icon img {
+  object-fit: cover;
+  border-radius: 13px;
+}
+
+/* ============================================================
+   Contacts
+   ============================================================ */
+
+.contacts {
+  margin-top: 64px;
+}
+
+.js .contacts {
+  display: none;
+}
+
+.contacts.show {
+  display: block;
+  animation: rise .45s cubic-bezier(.16, 1, .3, 1) both;
+}
+
+.contacts .label {
+  margin-bottom: 18px;
+}
+
+.pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 11px 18px;
+  border: 1px solid var(--border-strong);
+  border-radius: 999px;
+  background: var(--surface);
+  font-size: 14px;
+  color: var(--text);
+  transition: border-color .2s, background .2s, transform .2s;
+}
+
+.pill:hover {
+  border-color: var(--accent);
+  background: var(--surface-hover);
+  transform: translateY(-2px);
+  color: var(--text);
+}
+
+/* Social icons: SVG files tinted to the accent via mask (theme-aware). */
+.pill-icon {
+  flex: 0 0 auto;
+  width: 17px;
+  height: 17px;
+  background-color: var(--accent);
+  -webkit-mask: center / contain no-repeat;
+  mask: center / contain no-repeat;
+}
+
+.pill-icon.linkedin {
+  -webkit-mask-image: url(../../images/icons/linkedin.svg);
+  mask-image: url(../../images/icons/linkedin.svg);
+}
+
+.pill-icon.github {
+  -webkit-mask-image: url(../../images/icons/github.svg);
+  mask-image: url(../../images/icons/github.svg);
+}
+
+.pill-icon.behance {
+  -webkit-mask-image: url(../../images/icons/behance.svg);
+  mask-image: url(../../images/icons/behance.svg);
+}
+
+/* ============================================================
+   Modal
+   ============================================================ */
+
+.modal {
+  position: fixed;
+  inset: 0;
+  background: var(--overlay);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 40px 64px; /* side gutter for the project nav arrows */
+  overflow-y: auto;
+  z-index: 50;
+  animation: fadein .2s ease both;
+}
+
+.modal[hidden] {
+  display: none;
+}
+
+.modal-card {
+  position: relative;
+  width: 100%;
+  max-width: 560px;
+  background: var(--modal);
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  padding: 32px;
+  box-shadow: 0 24px 60px var(--modal-shadow-color);
+  animation: pop .32s cubic-bezier(.16, 1, .3, 1) both;
+}
+
+.modal-nav-track {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: min(560px, 100vw - 128px);
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* ---- Circular icon buttons: modal side-nav, header-nav, and close ---- */
+.modal-nav,
+.head-nav,
+.modal-close {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 1px solid var(--border-strong);
+  background: var(--surface);
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: background .2s, border-color .2s;
+}
+
+.modal-nav:hover,
+.head-nav:hover,
+.modal-close:hover {
+  background: var(--surface-hover);
+  border-color: var(--accent);
+}
+
+/* The icon: an SVG mask tinted with the button's colour. Each button sets --icon below. */
+.modal-nav::before,
+.head-nav::before,
+.modal-close::before,
+.lightbox-nav::before,
+.lightbox-close::before {
+  content: "";
+  width: 42%;
+  height: 42%;
+  background-color: currentColor;
+  -webkit-mask: var(--icon) center / contain no-repeat;
+  mask: var(--icon) center / contain no-repeat;
+}
+
+.prev {
+  --icon: url(../../images/icons/chevron-left.svg);
+}
+
+.next {
+  --icon: url(../../images/icons/chevron-right.svg);
+}
+
+.modal-close,
+.lightbox-close {
+  --icon: url(../../images/icons/close.svg);
+}
+
+/* Side arrows: positioned in the viewport-centred track (desktop). */
+.modal-nav {
+  position: absolute;
+  top: 0;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  pointer-events: auto;
+}
+
+.modal-nav.prev {
+  left: -52px;
+}
+
+.modal-nav.next {
+  right: -52px;
+}
+
+/* Header arrows: hidden on desktop, shown in the modal header on mobile (media query). */
+.head-nav {
+  display: none;
+  flex: 0 0 auto;
+  width: 34px;
+  height: 34px;
+}
+
+.modal-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.modal-title {
+  flex: 1;
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--text);
+  line-height: 1.1;
+}
+
+.modal-close {
+  flex: 0 0 auto;
+  width: 34px;
+  height: 34px;
+}
+
+.modal-gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.modal-gallery[hidden] {
+  display: none;
+}
+
+.modal-shot {
+  width: 100%;
+  aspect-ratio: 16 / 9; /* fixed size so the modal doesn't jump between projects */
+  object-fit: cover;
+  border-radius: 14px;
+  border: 1px solid var(--border-soft);
+  display: block;
+}
+
+.modal-thumbs {
+  display: flex;
+  gap: 10px;
+}
+
+.modal-thumbs[hidden] {
+  display: none;
+}
+
+.modal-thumb {
+  flex: 1 1 0;
+  min-width: 0;
+  height: 96px;
+  padding: 0;
+  border: 1px solid var(--border-soft);
+  border-radius: 11px;
+  overflow: hidden;
+  background: var(--surface);
+  cursor: pointer;
+  transition: border-color .2s, transform .2s;
+}
+
+.modal-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.modal-thumb:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.modal-body {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text-soft);
+  margin-bottom: 24px;
+}
+
+.modal-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.modal-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.modal-link.primary {
+  background: var(--accent);
+  color: #fff;
+}
+
+.modal-link.secondary {
+  background: transparent;
+  border: 1px solid var(--accent);
+  color: var(--accent);
+}
+
+.modal-link:hover {
+  opacity: .88;
+}
+
+/* ============================================================
+   Lightbox (always a dark overlay, regardless of theme)
+   ============================================================ */
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 48px;
+  background: rgba(20, 14, 8, .86);
+  backdrop-filter: blur(6px);
+  animation: fadein .2s ease both;
+}
+
+.lightbox[hidden] {
+  display: none;
+}
+
+.lightbox-img {
+  max-width: 90vw;
+  max-height: 84vh;
+  object-fit: contain;
+  border-radius: 12px;
+  box-shadow: 0 24px 70px rgba(0, 0, 0, .5);
+}
+
+.lightbox-close,
+.lightbox-nav {
+  position: absolute;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, .14);
+  color: #fff;
+  cursor: pointer;
+  transition: background .2s;
+}
+
+.lightbox-close:hover,
+.lightbox-nav:hover {
+  background: rgba(255, 255, 255, .28);
+}
+
+.lightbox-close {
+  top: 20px;
+  right: 24px;
+  width: 40px;
+  height: 40px;
+}
+
+.lightbox-nav {
+  top: 50%;
+  transform: translateY(-50%);
   width: 48px;
   height: 48px;
-  background: url("../images/icons-navigation-48.png");
-  position: relative;
-  display: block;
-  -webkit-transition: all 0.1s ease-in;
-  -moz-transition: all 0.1s ease-in;
-  -ms-transition: all 0.1s ease-in;
-  -o-transition: all 0.1s ease-in;
-  transition: all 0.1s ease-in;
-  opacity: 0.9;
-  margin: 8px 5px 0 5px;
-  float: left;
 }
-.navigation-icon:hover {
-  opacity: 1;
+
+.lightbox-nav.prev {
+  left: 24px;
 }
-.navigation-icon.about {
-  background-position: 0 0;
+
+.lightbox-nav.next {
+  right: 24px;
 }
-.navigation-icon.work {
-  background-position: -48px 0;
+
+/* ============================================================
+   Animations
+   ============================================================ */
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
-.navigation-icon.contacts {
-  background-position: -96px 0;
+
+@keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
 }
-.navigation-icon.blog {
-  background-position: -144px 0;
+
+@keyframes pop {
+  from { opacity: 0; transform: translateY(18px) scale(.97); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
 }
-.about-icon {
-  width: 128px;
-  height: 128px;
-  background: url("../images/icons-about.png");
-  position: relative;
-  display: block;
-  -webkit-transition: all 0.3s ease-in;
-  -moz-transition: all 0.3s ease-in;
-  -ms-transition: all 0.3s ease-in;
-  -o-transition: all 0.3s ease-in;
-  transition: all 0.3s ease-in;
-  cursor: pointer;
-  margin: 0 auto;
-  opacity: 0;
+
+@keyframes blink {
+  50% { opacity: 0; }
 }
-.about-icon:hover {
-  -webkit-transform: scale(1.1);
-  -moz-transform: scale(1.1);
-  -ms-transform: scale(1.1);
-  -o-transform: scale(1.1);
-  transform: scale(1.1);
+
+@keyframes zoomin {
+  from { opacity: 0; transform: scale(.8); }
+  to   { opacity: 1; transform: scale(1); }
 }
-.about-icon.javascript {
-  background-position: 0 0;
-}
-.about-icon.apple {
-  background-position: -128px 0;
-}
-.about-icon.linux {
-  background-position: -256px 0;
-}
-.about-icon.php {
-  background-position: -384px 0;
-}
-.about-icon.html5 {
-  background-position: -512px 0;
-}
-.about-icon.css3 {
-  background-position: -640px 0;
-}
-.row {
-  margin-left: 0;
-  margin-right: 0;
-}
-.vertical-spacer {
-  height: 200px;
-}
-.white-popup {
-  position: relative;
-  background: #FFF;
-  padding: 20px;
-  width: auto;
-  max-width: 640px;
-  margin: 20px auto;
-}
-.white-popup img {
-  opacity: 1;
-  margin: 20px auto;
-}
-footer {
-  background: #262525;
-  text-align: center;
-  padding: 10px;
-  color: #535353;
-  font-size: 12px;
-}
-/* overlay at start */
-.mfp-fade.mfp-bg {
-  opacity: 0;
-  -webkit-transition: all 0.5s ease-out;
-  -moz-transition: all 0.5s ease-out;
-  transition: all 0.5s ease-out;
-}
-/* overlay animate in */
-.mfp-fade.mfp-bg.mfp-ready {
-  opacity: 0.8;
-}
-/* overlay animate out */
-.mfp-fade.mfp-bg.mfp-removing {
-  opacity: 0;
-}
-/* content at start */
-.mfp-fade.mfp-wrap .mfp-content {
-  opacity: 0;
-  transform: scale(0.3);
-  -webkit-transition: all 0.3s ease-out;
-  -moz-transition: all 0.3s ease-out;
-  transition: all 0.3s ease-out;
-}
-/* content animate it */
-.mfp-fade.mfp-wrap.mfp-ready .mfp-content {
-  opacity: 1;
-  transform: scale(1);
-}
-/* content animate out */
-.mfp-fade.mfp-wrap.mfp-removing .mfp-content {
-  opacity: 0;
-  transform: scale(0.3);
-}
-.btn {
-  -webkit-border-radius: 0;
-  -moz-border-radius: 0;
-  border-radius: 0;
-  -moz-background-clip: padding;
-  -webkit-background-clip: padding-box;
-  background-clip: padding-box;
+
+/* ============================================================
+   Small screens
+   ============================================================ */
+
+@media (max-width: 560px) {
+  .page {
+    padding: 48px 18px 72px;
+  }
+
+  /* Centre the hero (avatar over the stacked heading + tagline) */
+  .hero {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 18px;
+  }
+
+  .hero h1 {
+    font-size: 34px;
+  }
+
+  .tagline {
+    white-space: normal;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  /* Centre the "Find me on" label and its pills */
+  .contacts {
+    text-align: center;
+  }
+
+  .pills {
+    justify-content: center;
+  }
+
+  /* Swap the side arrows for header arrows next to the close button on mobile */
+  .modal-nav-track {
+    display: none;
+  }
+
+  .head-nav {
+    display: inline-flex;
+  }
+
+  .modal {
+    padding: 32px 16px;
+  }
+
+  .modal-card {
+    padding: 24px;
+  }
+
+  /* Small square thumbnails that wrap (mobile only) */
+  .modal-thumbs {
+    flex-wrap: wrap;
+  }
+
+  .modal-thumb {
+    flex: 0 0 auto;
+    width: 64px;
+    height: 64px;
+  }
+
+  /* Lightbox arrows at the bottom-centre (more room for the image on a narrow screen) */
+  .lightbox-nav {
+    top: auto;
+    bottom: 24px;
+    transform: none;
+  }
+
+  .lightbox-nav.prev {
+    left: calc(50% - 54px);
+    right: auto;
+  }
+
+  .lightbox-nav.next {
+    left: calc(50% + 6px);
+    right: auto;
+  }
+
+  /* Don't let the theme toggle follow scroll on mobile — pin it to the top of the page */
+  .theme-toggle {
+    position: absolute;
+  }
 }
